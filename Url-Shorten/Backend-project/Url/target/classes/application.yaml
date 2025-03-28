@@ -1,0 +1,54 @@
+spring:
+  application:
+    name: Url
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/Url  # Database name: Url
+    username: postgres  # Your actual DB username
+    password: sk143  # Your actual DB password
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      idle-timeout: 30000  # 30s
+      max-lifetime: 1800000  # 30 min
+      connection-timeout: 20000  # 20s
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    open-in-view: false  # Prevents lazy loading issues
+    hibernate:
+      ddl-auto: validate  # Safe for production
+    properties:
+      hibernate:
+        format_sql: true
+        jdbc:
+          lob:
+            non_contextual_creation: true  # Fix for PostgreSQL LOB handling
+        generate_statistics: true  # Enables Hibernate statistics
+        use_sql_comments: true  # Shows SQL comments in logs
+
+logging:
+  level:
+    root: INFO
+    org.springframework: DEBUG
+    org.hibernate.SQL: DEBUG  # Logs all executed SQL queries
+    org.hibernate.type.descriptor.sql: TRACE  # Logs SQL parameter bindings
+    com.zaxxer.hikari: DEBUG  # Logs HikariCP connection pool details
+    org.springframework.security: DEBUG  # Logs Spring Security events
+    org.springframework.web: DEBUG  # Logs HTTP request details
+
+debug: true  # Enables debug mode globally
+
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-exception: true
+    include-stacktrace: always
+
+jwt:
+  secret: krm  # Replace with your actual secret key
+  expiration: 172800  # 2 days in SECONDS
