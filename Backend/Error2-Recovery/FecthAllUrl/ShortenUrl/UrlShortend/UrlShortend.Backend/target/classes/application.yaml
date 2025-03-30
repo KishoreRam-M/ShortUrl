@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: UrlShortend.Backend
+
+  datasource:
+    url: jdbc:postgresql://localhost:5432/UrlShortend
+    username: postgres
+    password: sk143
+    driver-class-name: org.postgresql.Driver
+    hikari:
+      maximum-pool-size: 10
+      minimum-idle: 2
+      idle-timeout: 300000  # 5 min
+      max-lifetime: 1800000  # 30 min
+      connection-timeout: 20000  # 20s
+
+  jpa:
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+    show-sql: true
+    open-in-view: false  # Prevents lazy loading issues
+    hibernate:
+      ddl-auto: update
+      properties:
+        hibernate.format_sql: true
+        hibernate.generate_statistics: true
+        hibernate.use_sql_comments: true
+        jdbc.lob.non_contextual_creation: true  # Fix for PostgreSQL LOB handling
+
+server:
+  port: 8080
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-exception: true
+    include-stacktrace: always
+
+jwt:
+  expiration: 172800  # 2 days in SECONDS
