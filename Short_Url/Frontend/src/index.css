@@ -1,0 +1,47 @@
+/* 🦇 Button Hover Animation (Bootstrap) */
+.btn-danger {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .btn-danger:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+  }
+  
+  /* ✨ Input Field Glow */
+  .form-control:focus {
+    border-color: crimson !important;
+    box-shadow: 0 0 10px crimson !important;
+  }
+  
+  /* ⚡ Dashboard Card Hover */
+  .card-hover {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  }
+  
+  .card-hover:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+  }
+  
+  /* 🔥 Title Flickering Effect */
+  @keyframes flicker {
+    0% { opacity: 1; text-shadow: 0 0 15px red; }
+    50% { opacity: 0.8; text-shadow: 0 0 5px darkred; }
+    100% { opacity: 1; text-shadow: 0 0 20px red; }
+  }
+  
+  .flicker-text {
+    animation: flicker 1.5s infinite alternate;
+  }
+  
+  /* 🦇 Batman Logo Hover */
+  .bat-logo {
+    display: inline-block;
+    transition: transform 0.5s ease-in-out;
+  }
+  
+  .bat-logo:hover {
+    transform: rotate(360deg);
+  }
+  

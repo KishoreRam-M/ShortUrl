@@ -1,0 +1,35 @@
+.shadow-lg {
+    box-shadow: 0px 0px 15px rgba(255, 0, 0, 0.8);
+  }
+  .btn-danger {
+    transition: all 0.3s ease-in-out;
+  }
+  .btn-danger:hover {
+    background-color: #8b0000;
+  }
+  
+  body {
+    background-color: #121212 !important; /* Deep dark background */
+    color: white !important;
+  }
+  
+  /* Button Hover Animation */
+.btn-danger {
+  transition: transform 0.2s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.btn-danger:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+}
+
+/* Input Field Focus Effect */
+.form-control {
+  transition: border-color 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.form-control:focus {
+  border-color: crimson;
+  box-shadow: 0 0 10px crimson;
+  outline: none;
+}
